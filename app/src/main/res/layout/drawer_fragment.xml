@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/menu_articles"
+        android:layout_width="@dimen/drawer_width"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_4"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginBottom="@dimen/margin_8"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_4"
+        app:layout_goneMarginStart="@dimen/margin_4">
+
+        <ImageView
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_menu_news"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="@string/menu_news"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/drawer_item_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+             />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menu_map"
+        android:layout_width="@dimen/drawer_width"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_4"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginBottom="@dimen/margin_8"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_4"
+        app:layout_goneMarginStart="@dimen/margin_4">
+
+        <ImageView
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_menu_map"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="@string/menu_map"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/drawer_item_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+  />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menu_events"
+        android:layout_width="@dimen/drawer_width"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_4"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginBottom="@dimen/margin_8"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_4"
+        app:layout_goneMarginStart="@dimen/margin_4">
+
+        <ImageView
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_menu_events"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="@string/menu_events"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/drawer_item_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+             />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menu_leadership"
+        android:layout_width="@dimen/drawer_width"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_4"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginBottom="@dimen/margin_8"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_4"
+        app:layout_goneMarginStart="@dimen/margin_4">
+
+        <ImageView
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_menu_leadership"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="@string/menu_leadership"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/drawer_item_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+        />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menu_language"
+        android:layout_width="@dimen/drawer_width"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_4"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginBottom="@dimen/margin_8"
+        android:layout_weight=".75"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_4"
+        app:layout_goneMarginStart="@dimen/margin_4">
+
+        <ImageView
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_menu_language"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="@string/menu_language"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/drawer_item_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+           />
+    </LinearLayout>
+
+
+</LinearLayout>
+

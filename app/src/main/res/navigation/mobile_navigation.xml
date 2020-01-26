@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/mobile_navigation"
+	app:startDestination="@+id/nav_news">
+	
+	<fragment
+		android:id="@+id/nav_news"
+		android:name="com.ebnrdwan.task.ui.articles.ArticlesFragment"
+		android:label="@string/ny_times"
+		tools:layout="@layout/fragment_articles">
+		<action
+			android:id="@+id/action_nav_home_to_nav_details"
+			app:destination="@id/nav_details"
+			app:enterAnim="@anim/slide_in_right"
+			app:exitAnim="@anim/slide_out_left"
+			app:popEnterAnim="@anim/slide_in_left"
+			app:popExitAnim="@anim/slide_out_right"
+			app:popUpTo="@+id/nav_news">
+			<argument
+				android:name="article_id"
+				app:argType="integer" />
+		</action>
+	</fragment>
+	
+	
+	<fragment
+		android:id="@+id/nav_details"
+		android:name="com.ebnrdwan.task.ui.details.ArticleDetailsFragment"
+		android:label="@string/menu_explore"
+		tools:layout="@layout/fragment_detail" >
+		<argument
+			android:name="article_id"
+			app:argType="integer" />
+	</fragment>
+
+
+</navigation>

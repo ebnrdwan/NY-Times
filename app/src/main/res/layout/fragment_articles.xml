@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/swipe_refresh"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:clipToPadding="false">
+	
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@drawable/main_bg"
+		android:clipToPadding="false"
+		>
+		
+		<androidx.recyclerview.widget.RecyclerView
+			android:id="@+id/rvArticles"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_marginTop="@dimen/margin_8"
+			android:background="@color/article_list_bg"
+			android:clipToPadding="false"
+			android:textAlignment="center"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintHorizontal_bias="0.48"
+			app:layout_constraintHorizontal_chainStyle="packed"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:listitem="@layout/article_list_item" />
+		
+		<include
+			android:id="@+id/loading_layout"
+			layout="@layout/loading_layout"
+			android:layout_width="@dimen/iv_80"
+			android:layout_height="@dimen/iv_80"
+			android:layout_centerInParent="true"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintRight_toRightOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+		
+		<include
+			android:id="@+id/no_data_internet_layout"
+			layout="@layout/handle__nodata_nointernet_layout"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintHorizontal_bias="0.0"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintRight_toRightOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintVertical_bias="0.0" />
+	
+	
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+

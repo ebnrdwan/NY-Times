@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<integer name="img_flip_x">1</integer>
+	<integer name="article_title_max_lines">3</integer>
+	
+	
+	<!--animations attribute-->
+	<integer name="duration_slide">700</integer>
+	<fraction name="fade_0">0.0</fraction>
+	<fraction name="fade_1">1.0</fraction>
+
+
+	<!--ids-->
+	<item type="id" name="temp_id" />
+</resources>
