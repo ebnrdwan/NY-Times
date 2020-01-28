@@ -19,14 +19,16 @@
 ShowCase for the trended architecture and tools used in android in a simple sample
 # \[ 🚧 Work in progress ⛏👷🔧 🚧 \]
 
+### Non-Goals
+make a production ready-code, this is playground
+
 ## Doing
 - Adding more ui testing and validate the fleaky ones
 - Adding integration test
 - Apply custom lint rules
 - Revisit architecture and  testing and for upcoming enhancements
 
-### Non-Goals
-make a production ready-code, this is playground
+
 
 ## Todo
 **apply static code analysis: apply one or more**
