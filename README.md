@@ -54,11 +54,10 @@ Very welcome.
 
  ### Tools & Dependencies: ###
  
-
-- [RxJava2](https://github.com/ReactiveX/RxJava)
-- [RxKotlin](https://github.com/ReactiveX/RxJava)
 - [kotlin](https://kotlinlang.org/)
 - [kotlinDsl](https://kotlinlang.org/)
+- [RxJava2](https://github.com/ReactiveX/RxJava)
+- [RxKotlin](https://github.com/ReactiveX/RxJava)
 - [RxAndroid](https://github.com/ReactiveX/RxAndroid)
 - [Retrofit2](https://github.com/square/retrofit)
 - [Dagger2](https://dagger.dev//)
