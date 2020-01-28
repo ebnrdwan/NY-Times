@@ -15,6 +15,32 @@
 - Consider edge cases, leaks and how long-running operations can affect the instances in your architecture.
 - Don’t put logic in the ViewModel that is critical to saving clean state or related to data. Any call you make from a ViewModel can be the last one.
 
+## Goal
+Build an open source math, memory and focus improvement app. The app itself consists of a bunch of small games. Right now I try to keep the games as simple as possible to allow the implementation for the terminal client.
+
+## Doing
+- adding more ui testing and validate the fleaky ones
+- adding integration test
+- apply custom lint rules
+- revisit architecture and  testing and for upcoming enhancements
+
+
+## Todo
+**apply static code analysis: apply one or more**
+- detekt
+- findBug
+- SonarQube
+
+**using CI/CD: apply one or more**
+- Gitlab with integration with slack
+- Travis
+
+
+
+
+## Contribution
+Very welcome.
+
 
 
 ## Technical Stacks:
