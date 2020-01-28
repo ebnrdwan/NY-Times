@@ -67,6 +67,8 @@ Very welcome.
 - [OkHttp](https://github.com/square/okhttp)
 - [Junit4](https://junit.org/junit4/)
 - [Espresso](https://dagger.dev//)
+- [Mockito](https://mockito.io//)
+- [Fragment Test](https://developer.android.com)
 
 
 
