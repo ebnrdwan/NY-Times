@@ -1,110 +1,115 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
-apply plugin: "androidx.navigation.safeargs"
+apply plugin: Plugins.androidApplication
+apply plugin: Plugins.kotlinAndroid
+apply plugin: Plugins.kotlinAndroidExtensions
+apply plugin: Plugins.kotlinKapt
+apply plugin: Plugins.safeArgsNavigation
+
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion Config.targetSdkVersion
     defaultConfig {
-        applicationId "com.ebnrdwan.task"
-        minSdkVersion 19
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        applicationId Config.applicationId
+        minSdkVersion Config.minSdkVersion
+        targetSdkVersion Config.targetSdkVersion
+        versionCode Config.versionCode
+        versionName Config.versionName
+        testInstrumentationRunner InstrumentationTestLibraries.runnerClass
 
 
     }
 
     buildTypes {
         buildTypes.each {
-            it.buildConfigField 'String', 'API_KEY', API_KEY
-            it.resValue 'string', 'API_KEY', API_KEY
+            it.buildConfigField "String", "API_KEY", API_KEY
+            it.resValue "string", "API_KEY", API_KEY
         }
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
         }
         debug {
-            applicationIdSuffix ".development"
+            applicationIdSuffix Dev.applicationIdSuffix
             // as long as no remote integration coupled with application id
         }
 
     }
-    flavorDimensions "version"
+    flavorDimensions Dimensions.version
     productFlavors {
         production {
-            dimension "version"
+            dimension Dimensions.version
         }
         development {
-            dimension "version"
+            dimension Dimensions.version
         }
     }
 
     sourceSets {
-        development { java.srcDirs = ['src/development/java'] }
-        production { java.srcDirs = ['src/production/java'] }
+        development { java.srcDirs = ["src/development/java"] }
+        production { java.srcDirs = ["src/production/java"] }
     }
 
     compileOptions {
-        sourceCompatibility = 1.8
-        targetCompatibility = 1.8
+        sourceCompatibility = Versions.javaVersion
+        targetCompatibility = Versions.javaVersion
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = Versions.kotlinJvmTarget
     }
 
 }
 
 dependencies {
 
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    testImplementation libraries.junit
-    testImplementation libraries.junitx
-    testImplementation libraries.mockito
-    testImplementation libraries.mockServer
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    testImplementation UnitTestLibraries.mockWebserver
+    testImplementation UnitTestLibraries.jUnitx
+    testImplementation UnitTestLibraries.jUnit
+    testImplementation UnitTestLibraries.mockitoCore
 
-    androidTestImplementation libraries.espressoCore
-    androidTestImplementation libraries.espressoIdling
-    androidTestImplementation libraries.espressoIntents
-    androidTestImplementation libraries.espressoContrib
-    androidTestImplementation libraries.mockitoAndroid
-    androidTestImplementation libraries.rules
-    androidTestImplementation libraries.runners
+    androidTestImplementation InstrumentationTestLibraries.espressoCore
+    androidTestImplementation InstrumentationTestLibraries.espressoIdling
+    androidTestImplementation InstrumentationTestLibraries.espressoIntents
+    androidTestImplementation InstrumentationTestLibraries.espressoContrib
+    androidTestImplementation InstrumentationTestLibraries.mockitoAndroid
+    androidTestImplementation InstrumentationTestLibraries.rules
+    androidTestImplementation InstrumentationTestLibraries.runners
 
-    debugImplementation libraries.fragment_test
-    debugImplementation libraries.testingX
+    debugImplementation SharedTestLibraries.fragment_test
+    debugImplementation SharedTestLibraries.testingX
 
-    implementation libraries.kotlin
-    implementation libraries.androidX
-    implementation libraries.material_design
-    implementation libraries.constraintlayout
-    implementation libraries.navigation_fragment
-    implementation libraries.navigation_fragmentKtx
-    implementation libraries.navigation_UI
-    implementation libraries.navigation_UiKtx
-    implementation libraries.lifecycle
-    implementation libraries.dynamic_dimentions
-    implementation libraries.dynamic_font_size
-    implementation libraries.lottie
-    implementation libraries.retrofit
-    implementation libraries.retrofitRx
-    implementation libraries.retrofitJson
-    implementation libraries.rxKotlin
-    implementation libraries.rxAndroid
-    implementation libraries.picasso
-    implementation libraries.fragmentKtx
-    implementation libraries.dagger
-    implementation libraries.circularImage
-    implementation libraries.paging
-    implementation(libraries.retrofitLogger) {
-        exclude group: 'org.json', module: 'json'
+    implementation CoreLibraries.kotlin
+    implementation CoreLibraries.androidX
+    implementation CoreLibraries.material_design
+    implementation CoreLibraries.constraintlayout
+    implementation CoreLibraries.lifecycle
+    implementation CoreLibraries.fragmentKtx
+
+    implementation NavigationLibraries.navigation_fragment
+    implementation NavigationLibraries.navigation_fragmentKtx
+    implementation NavigationLibraries.navigation_UI
+    implementation NavigationLibraries.navigation_UiKtx
+
+    implementation UiLibraries.dynamic_dimentions
+    implementation UiLibraries.dynamic_font_size
+    implementation UiLibraries.lottie
+    implementation UiLibraries.circularImage
+
+    implementation DomainLibraries.retrofit
+    implementation DomainLibraries.retrofitRx
+    implementation DomainLibraries.retrofitJson
+    implementation DomainLibraries.rxKotlin
+    implementation DomainLibraries.rxAndroid
+    implementation DomainLibraries.picasso
+    implementation DomainLibraries.dagger
+
+    implementation DomainLibraries.paging
+    implementation(DomainLibraries.retrofitLogger) {
+        exclude group: "org.json", module: "json"
     }
-    
-    kapt libraries.daggerAnnotation
-    kapt libraries.daggerProcessor
-    kaptAndroidTest libraries.daggerAnnotation
-    kaptTest libraries.daggerAnnotation
+
+    kapt DomainLibraries.daggerAnnotation
+    kapt DomainLibraries.daggerProcessor
+    kaptAndroidTest DomainLibraries.daggerAnnotation
+    kaptTest DomainLibraries.daggerAnnotation
 
 }
