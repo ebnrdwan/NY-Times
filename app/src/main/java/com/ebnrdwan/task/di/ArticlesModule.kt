@@ -2,6 +2,9 @@ package com.ebnrdwan.task.di
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
+import com.ebnrdwan.core.di.FragmentScope
+import com.ebnrdwan.core.di.MainArticlesSource
+import com.ebnrdwan.core.di.ViewModelKey
 import com.ebnrdwan.task.data.repositories.articles.ArticlesRepository
 import com.ebnrdwan.task.data.repositories.articles.IArticlesRepository
 
@@ -9,8 +12,8 @@ import com.ebnrdwan.task.data.sources.articles.ArticleDataSource
 import com.ebnrdwan.task.data.sources.articles.IArticlesDataSource
 import com.ebnrdwan.task.domain.ArticlesUseCase
 import com.ebnrdwan.task.domain.IArticlesUseCase
-import com.ebnrdwan.task.networking.articles.ArticlesApi
-import com.ebnrdwan.task.ui.articles.ArticlesViewModel
+import com.ebnrdwan.task.data.service.ArticlesApi
+import com.ebnrdwan.task.presentation.articles.ArticlesViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

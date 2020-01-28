@@ -6,9 +6,7 @@
 	<string name="menu_news">الأخبار</string>
 	<string name="menu_explore">التفاصيل</string>
 	<string name="welcome">أهلا</string>
-	<string name="user_name">توني رشدي</string>
-	<string name="no_internet">من فضلك تأكد من الانترنت</string>
-	<string name="no_data">لا يوجد بيانات حاليا</string>
+
 	<string name="ny_times">الأخبار</string>
 	<string name="menu_map">خريطة الآخبار</string>
 	<string name="menu_events">الأحداث</string>
@@ -16,12 +14,9 @@
 	<string name="menu_language" />
 	<string name="open">افتح</string>
 	<string name="close">اغلق</string>
-	<string name="error">حدث شئ ما خطأ</string>
 	<string name="type">(%1$s)</string>
 	<string name="views"> مشاهدات %1$s </string>
-	<string name="loading">جاري الانتظار..</string>
-	<string name="reoading">جاري إعادة التحميل..</string>
-	<string name="success">تمت العمليه</string>
+
 	<string name="tools_text_title">عنوان بوست جديد</string>
 	<string name="tools_tv_likes">اعجابات (75)</string>
 	<string name="tools_tv_views">8 مشاهدات</string>
@@ -32,4 +27,7 @@
 	<string name="server_error">الخادم به عطل، اتصل بفريق الدعم</string>
 	<string name="search">بحث</string>
 	<string name="article_id_notvalid">لا يمكن تحميل تفاصيل المقال</string>
+
+
+
 </resources>

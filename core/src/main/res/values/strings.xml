@@ -1,0 +1,12 @@
+<resources>
+    <string name="not_found">can\'t reach server</string>
+    <string name="bad_request">server received wrong data</string>
+    <string name="unauthotized">unauthorized user</string>
+    <string name="server_error">Server is down, please contact support</string>
+    <string name="error">Something went wrong</string>
+    <string name="no_internet">please check your internet connection</string>
+    <string name="loading">loading..</string>
+    <string name="reoading">reloading..</string>
+    <string name="success">Success</string>
+    <string name="no_data">No data yet </string>
+</resources>

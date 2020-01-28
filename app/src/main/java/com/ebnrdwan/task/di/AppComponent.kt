@@ -1,7 +1,7 @@
 package com.ebnrdwan.task.di
 
 import android.app.Application
-import com.ebnrdwan.task.ui.main.MainActivity
+import com.ebnrdwan.task.presentation.main.MainActivity
 import dagger.BindsInstance
 import dagger.Component
 

@@ -12,7 +12,8 @@ import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import androidx.test.rule.ActivityTestRule
 import com.ebnrdwan.task.R
-import com.ebnrdwan.task.ui.main.MainActivity
+import com.ebnrdwan.task.presentation.articles.ArticlesFragment
+import com.ebnrdwan.task.presentation.main.MainActivity
 import org.hamcrest.Matchers
 import org.junit.Before
 import org.junit.Rule

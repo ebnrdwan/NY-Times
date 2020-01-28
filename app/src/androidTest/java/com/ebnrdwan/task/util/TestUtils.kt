@@ -26,7 +26,7 @@ import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.test.runner.lifecycle.ActivityLifecycleMonitor
-import com.ebnrdwan.task.ui.base.BaseFragment
+import com.ebnrdwan.corepresentation.base.BaseFragment
 
 
 /**

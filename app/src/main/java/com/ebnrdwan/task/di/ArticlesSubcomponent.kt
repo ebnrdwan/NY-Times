@@ -1,7 +1,8 @@
 package com.ebnrdwan.task.di
 
-import com.ebnrdwan.task.ui.articles.ArticlesFragment
-import com.ebnrdwan.task.ui.details.ArticleDetailsFragment
+import com.ebnrdwan.core.di.FragmentScope
+import com.ebnrdwan.task.presentation.articles.ArticlesFragment
+import com.ebnrdwan.task.presentation.details.ArticleDetailsFragment
 import dagger.Subcomponent
 
 @FragmentScope

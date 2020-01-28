@@ -2,14 +2,15 @@ package com.ebnrdwan.task.ui.articles
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.ebnrdwan.task.data.dto.articles.ArticlesEntity
-import com.ebnrdwan.task.data.error.Error
-import com.ebnrdwan.task.data.error.manager.ErrorManager
-import com.ebnrdwan.task.data.error.mapper.ErrorMapper
-import com.ebnrdwan.task.data.models.UiState
+import com.ebnrdwan.core.data.error.Error
+import com.ebnrdwan.core.data.error.manager.ErrorManager
+import com.ebnrdwan.core.data.error.mapper.ErrorMapper
+import com.ebnrdwan.core.data.models.UiState
 import com.ebnrdwan.task.data.repositories.articles.IArticlesRepository
 import com.ebnrdwan.task.data.repositories.mock.MockArticleRepository
 import com.ebnrdwan.task.data.repositories.mock.MockDataSource
 import com.ebnrdwan.task.domain.ArticlesUseCase
+import com.ebnrdwan.task.presentation.articles.ArticlesViewModel
 import io.reactivex.android.plugins.RxAndroidPlugins
 import io.reactivex.schedulers.Schedulers
 import org.junit.Assert.assertEquals
@@ -33,7 +34,8 @@ class ArticlesViewModelTest {
 
         repository = MockArticleRepository()
         useCase = ArticlesUseCase(repository)
-        errorManager = ErrorManager(ErrorMapper())
+        errorManager =
+        ErrorManager(ErrorMapper())
         response = MockDataSource.getFakeArticlesResponse()
         viewmodel = ArticlesViewModel(useCase)
         RxAndroidPlugins.setInitMainThreadSchedulerHandler { Schedulers.trampoline() }

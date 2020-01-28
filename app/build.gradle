@@ -61,11 +61,14 @@ android {
 dependencies {
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    implementation project(Modules.core)
+    implementation project(Modules.corePresentation)
     testImplementation UnitTestLibraries.mockWebserver
     testImplementation UnitTestLibraries.jUnitx
     testImplementation UnitTestLibraries.jUnit
     testImplementation UnitTestLibraries.mockitoCore
-
+    testImplementation UnitTestLibraries.mockWebserver
     androidTestImplementation InstrumentationTestLibraries.espressoCore
     androidTestImplementation InstrumentationTestLibraries.espressoIdling
     androidTestImplementation InstrumentationTestLibraries.espressoIntents
@@ -73,14 +76,9 @@ dependencies {
     androidTestImplementation InstrumentationTestLibraries.mockitoAndroid
     androidTestImplementation InstrumentationTestLibraries.rules
     androidTestImplementation InstrumentationTestLibraries.runners
-
     debugImplementation SharedTestLibraries.fragment_test
     debugImplementation SharedTestLibraries.testingX
-
-    implementation CoreLibraries.kotlin
-    implementation CoreLibraries.androidX
     implementation CoreLibraries.material_design
-    implementation CoreLibraries.constraintlayout
     implementation CoreLibraries.lifecycle
     implementation CoreLibraries.fragmentKtx
 
@@ -89,23 +87,10 @@ dependencies {
     implementation NavigationLibraries.navigation_UI
     implementation NavigationLibraries.navigation_UiKtx
 
-    implementation UiLibraries.dynamic_dimentions
-    implementation UiLibraries.dynamic_font_size
-    implementation UiLibraries.lottie
     implementation UiLibraries.circularImage
-
-    implementation DomainLibraries.retrofit
-    implementation DomainLibraries.retrofitRx
-    implementation DomainLibraries.retrofitJson
-    implementation DomainLibraries.rxKotlin
-    implementation DomainLibraries.rxAndroid
     implementation DomainLibraries.picasso
-    implementation DomainLibraries.dagger
 
     implementation DomainLibraries.paging
-    implementation(DomainLibraries.retrofitLogger) {
-        exclude group: "org.json", module: "json"
-    }
 
     kapt DomainLibraries.daggerAnnotation
     kapt DomainLibraries.daggerProcessor

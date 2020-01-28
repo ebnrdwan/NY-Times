@@ -7,7 +7,7 @@
 	<uses-permission android:name="android.permission.INTERNET" />
 	
 	<application
-		android:name="com.ebnrdwan.task.ui.ApplicationController"
+		android:name="com.ebnrdwan.task.presentation.ApplicationController"
 		android:allowBackup="false"
 		android:icon="@mipmap/ny_launcher"
 		android:label="@string/app_name"
@@ -16,7 +16,7 @@
 		android:theme="@style/AppTheme"
 		tools:ignore="GoogleAppIndexingWarning">
 		<activity
-			android:name="com.ebnrdwan.task.ui.main.MainActivity"
+			android:name="com.ebnrdwan.task.presentation.main.MainActivity"
 			android:label="@string/app_name"
 			android:theme="@style/AppTheme.NoActionBar">
 			<intent-filter>

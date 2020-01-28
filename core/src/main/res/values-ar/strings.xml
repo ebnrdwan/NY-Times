@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="loading">جاري الانتظار..</string>
+    <string name="reoading">جاري إعادة التحميل..</string>
+    <string name="success">تمت العمليه</string>
+    <string name="no_internet">من فضلك تأكد من الانترنت</string>
+    <string name="no_data">لا يوجد بيانات حاليا</string>
+    <string name="error">حدث شئ ما خطأ</string>
+
+    <string name="not_found">لا يمكن الوصول الى الخوادم</string>
+    <string name="bad_request">الخادم به خطأ</string>
+    <string name="unauthotized">مستخدم غير موثق</string>
+    <string name="server_error">الخادم به عطل، اتصل بفريق الدعم</string>
+</resources>

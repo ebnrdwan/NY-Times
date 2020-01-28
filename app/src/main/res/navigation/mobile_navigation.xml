@@ -7,7 +7,7 @@
 	
 	<fragment
 		android:id="@+id/nav_news"
-		android:name="com.ebnrdwan.task.ui.articles.ArticlesFragment"
+		android:name="com.ebnrdwan.task.presentation.articles.ArticlesFragment"
 		android:label="@string/ny_times"
 		tools:layout="@layout/fragment_articles">
 		<action
@@ -27,7 +27,7 @@
 	
 	<fragment
 		android:id="@+id/nav_details"
-		android:name="com.ebnrdwan.task.ui.details.ArticleDetailsFragment"
+		android:name="com.ebnrdwan.task.presentation.details.ArticleDetailsFragment"
 		android:label="@string/menu_explore"
 		tools:layout="@layout/fragment_detail" >
 		<argument

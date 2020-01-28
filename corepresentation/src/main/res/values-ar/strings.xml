@@ -1,0 +1,9 @@
+<resources>
+
+	<string name="no_internet">من فضلك تأكد من الانترنت</string>
+	<string name="no_data">لا يوجد بيانات حاليا</string>
+	<string name="error">حدث شئ ما خطأ</string>
+	<string name="loading">جاري الانتظار..</string>
+	<string name="reoading">جاري إعادة التحميل..</string>
+	<string name="success">تمت العمليه</string>>
+</resources>

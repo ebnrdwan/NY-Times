@@ -1,0 +1,61 @@
+apply plugin: Plugins.androidLibrary
+apply plugin: Plugins.kotlinAndroid
+apply plugin: Plugins.kotlinAndroidExtensions
+apply plugin: Plugins.kotlinKapt
+android {
+    compileSdkVersion Config.targetSdkVersion
+    buildToolsVersion "29.0.2"
+
+
+    defaultConfig {
+        minSdkVersion Config.minSdkVersion
+        targetSdkVersion Config.targetSdkVersion
+        versionCode Config.versionCode
+        versionName Config.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions Dimensions.version
+    productFlavors {
+        production {
+            dimension Dimensions.version
+        }
+        development {
+            dimension Dimensions.version
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api CoreLibraries.kotlin
+    api CoreLibraries.androidX
+    api DomainLibraries.retrofit
+    api DomainLibraries.retrofitRx
+    api DomainLibraries.retrofitJson
+    api DomainLibraries.dagger
+    api DomainLibraries.rxKotlin
+    api DomainLibraries.rxAndroid
+    api(DomainLibraries.retrofitLogger) {
+        exclude group: "org.json", module: "json"
+    }
+
+    testImplementation UnitTestLibraries.jUnitx
+    testImplementation UnitTestLibraries.jUnit
+    testImplementation UnitTestLibraries.mockitoCore
+    testImplementation UnitTestLibraries.mockWebserver
+
+    kapt DomainLibraries.daggerAnnotation
+    kapt DomainLibraries.daggerProcessor
+
+}
