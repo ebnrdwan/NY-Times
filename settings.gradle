@@ -1,2 +1,2 @@
-include ':app', ':buildSrc', ':core', ':corepresentation'
+include ':app', ':buildSrc', ':core', ':corepresentation', ':lint'
 rootProject.name='NyTimes'

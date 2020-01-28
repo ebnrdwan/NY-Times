@@ -48,6 +48,9 @@ android {
         production { java.srcDirs = ["src/production/java"] }
     }
 
+    lintOptions {
+        abortOnError false
+    }
     compileOptions {
         sourceCompatibility = Versions.javaVersion
         targetCompatibility = Versions.javaVersion
@@ -61,7 +64,7 @@ android {
 dependencies {
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
-
+    lintChecks project(Modules.lint)
     implementation project(Modules.core)
     implementation project(Modules.corePresentation)
     testImplementation UnitTestLibraries.mockWebserver
@@ -89,12 +92,9 @@ dependencies {
 
     implementation UiLibraries.circularImage
     implementation DomainLibraries.picasso
-
     implementation DomainLibraries.paging
-
     kapt DomainLibraries.daggerAnnotation
     kapt DomainLibraries.daggerProcessor
     kaptAndroidTest DomainLibraries.daggerAnnotation
     kaptTest DomainLibraries.daggerAnnotation
-
 }

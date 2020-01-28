@@ -1,5 +1,3 @@
-
-
 /*===========================Core-Libraries==================================*/
 object CoreLibraries {
 
@@ -13,7 +11,6 @@ object CoreLibraries {
     const val fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.ktx}"
 
 }
-
 
 
 /*===========================Navigation-Libraries==================================*/
@@ -61,7 +58,6 @@ object SharedTestLibraries {
     const val testingX = "androidx.arch.core:core-testing:${Versions.textX}"
 
 }
-
 
 
 /*===========================UI-Libraries==================================*/

@@ -3,8 +3,8 @@ package com.ebnrdwan.task.presentation.main.drawer
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
-import com.ebnrdwan.task.R
 import com.ebnrdwan.corepresentation.base.BaseFragment
+import com.ebnrdwan.task.R
 import com.ebnrdwan.task.data.models.DrawerModel
 import kotlinx.android.synthetic.main.drawer_fragment.*
 
@@ -28,9 +28,6 @@ class DrawerFragment : BaseFragment() {
         menu_language.setOnClickListener(onDrawerClickListener)
     }
 
-
-    override fun observeOnUiState() {
-    }
 
     private val onDrawerClickListener = View.OnClickListener { view ->
         when (view.id) {
