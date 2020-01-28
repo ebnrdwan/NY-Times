@@ -18,6 +18,7 @@ import com.ebnrdwan.task.util.translateFromStart
 import com.ebnrdwan.task.util.translaterFromEnd
 import com.ebnrdwan.task.util.translaterFromUp
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.article_list_item.view.*
 import kotlinx.android.synthetic.main.fragment_detail.*
 import javax.inject.Inject
 
@@ -82,9 +83,9 @@ class ArticleDetailsFragment : BaseFragment() {
         tv_title.text = article.title
         tv_creation_date.text = article.publishedDate
 
-
-        if (article.media[0].mediaMetadata[0].url.isNotEmpty())
-            Picasso.get().load(article.media[0].mediaMetadata[0].url).into(iv_cover)
+        article.getFirstMedia()?.let {
+            Picasso.get().load(it).into(iv_cover)
+        }
         tv_title.translaterFromUp(delay = _delay500, duration = _duration1500)
         tv_creation_date.translateFromStart(delay = _delay1000, duration = _duration1000)
         tv_views.translaterFromEnd(delay = _delay1000, duration = _duration1000)

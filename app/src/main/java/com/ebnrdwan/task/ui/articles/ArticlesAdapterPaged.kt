@@ -59,8 +59,10 @@ constructor(
                 String.format(context.resources.getString(R.string.type), article.type)
             rootView.tv_views.text =
                 String.format(context.resources.getString(R.string.views), article.views)
-            if (article.media[0].mediaMetadata[0].url.isNotEmpty())
-                Picasso.get().load(article.media[0].mediaMetadata[0].url).into(rootView.iv_post_cover)
+            article.getFirstMedia()?.let {
+                Picasso.get().load(it).into(rootView.iv_post_cover)
+
+            }
 
             rootView.setOnClickListener {
                 onClickCallback(article)

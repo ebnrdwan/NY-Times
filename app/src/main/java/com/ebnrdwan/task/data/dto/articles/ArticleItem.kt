@@ -16,7 +16,7 @@ data class ArticleItem(
     @SerializedName("id")
     val id: Long = 0, // 100000006925786
     @SerializedName("media")
-    val media: List<Media> = listOf(),
+    val  media: List<Media> = listOf(),
     @SerializedName("published_date")
     val publishedDate: String = "", // 2020-01-16
     @SerializedName("section")
@@ -31,7 +31,16 @@ data class ArticleItem(
     val url: String = "", // https://www.nytimes.com/2020/01/16/opinion/the-bernie-sanders-fallacy.html
     @SerializedName("views")
     val views: Int = 0 // 20
-)
+){
+
+    fun getFirstMedia():String?{
+        return if (media.isNotEmpty() && media[0].mediaMetadata.isNotEmpty() &&
+            media[0].mediaMetadata[0].url.isNotEmpty()
+        ) media[0].mediaMetadata[0].url
+        else null
+
+    }
+}
 
 data class Media(
     @SerializedName("approved_for_syndication")
