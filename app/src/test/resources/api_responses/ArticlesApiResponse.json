@@ -1,0 +1,101 @@
+{
+    "status": "OK",
+    "copyright": "Copyright (c) 2019 The New York Times Company.  All Rights Reserved.",
+    "num_results": 1672,
+    "results": [
+        {
+            "url": "https://www.nytimes.com/2019/02/05/us/politics/fact-check-state-of-the-union.html",
+            "adx_keywords": "Trump, Donald J;State of the Union Message (US)",
+            "column": null,
+            "section": "U.S.",
+            "byline": "By THE NEW YORK TIMES",
+            "type": "Article",
+            "title": "State of the Union Fact Check: What Trump Got Right and Wrong",
+            "abstract": "President Trump appeared in front of a joint session of Congress for the annual address. Here is how his remarks stacked up against the facts.",
+            "published_date": "2019-02-05",
+            "source": "The New York Times",
+            "id": 100000006341465,
+            "asset_id": 100000006341465,
+            "views": 1,
+            "des_facet": [
+                "STATE OF THE UNION MESSAGE (US)"
+            ],
+            "org_facet": "",
+            "per_facet": [
+                "TRUMP, DONALD J"
+            ],
+            "geo_facet": "",
+            "media": [
+                {
+                    "type": "image",
+                    "subtype": "photo",
+                    "caption": "President Trump during the State of the Union address on Tuesday.",
+                    "copyright": "Sarah Silbiger/The New York Times",
+                    "approved_for_syndication": 1,
+                    "media-metadata": [
+                        {
+                            "url": "https://static01.nyt.com/images/2019/02/06/us/06dc-factcheck-sub2/06dc-factcheck-sub2-square320.jpg",
+                            "format": "square320",
+                            "height": 320,
+                            "width": 320
+                        },
+                        {
+                            "url": "https://static01.nyt.com/images/2019/02/06/us/06dc-factcheck-sub2/06dc-factcheck-sub2-thumbStandard.jpg",
+                            "format": "Standard Thumbnail",
+                            "height": 75,
+                            "width": 75
+                        },
+                        {
+                            "url": "https://static01.nyt.com/images/2019/02/06/us/06dc-factcheck-sub2/merlin_150246543_91aae21c-4fd6-46f0-b22b-ee333b7d9814-articleInline.jpg",
+                            "format": "Normal",
+                            "height": 127,
+                            "width": 190
+                        },
+                        {
+                            "url": "https://static01.nyt.com/images/2019/02/06/us/06dc-factcheck-sub2/merlin_150246543_91aae21c-4fd6-46f0-b22b-ee333b7d9814-sfSpan.jpg",
+                            "format": "Large",
+                            "height": 263,
+                            "width": 395
+                        },
+                        {
+                            "url": "https://static01.nyt.com/images/2019/02/06/us/06dc-factcheck-sub2/merlin_150246543_91aae21c-4fd6-46f0-b22b-ee333b7d9814-jumbo.jpg",
+                            "format": "Jumbo",
+                            "height": 683,
+                            "width": 1024
+                        },
+                        {
+                            "url": "https://static01.nyt.com/images/2019/02/06/us/06dc-factcheck-sub2/merlin_150246543_91aae21c-4fd6-46f0-b22b-ee333b7d9814-superJumbo.jpg",
+                            "format": "superJumbo",
+                            "height": 1365,
+                            "width": 2048
+                        },
+                        {
+                            "url": "https://static01.nyt.com/images/2019/02/06/us/06dc-factcheck-sub2/06dc-factcheck-sub2-square640.jpg",
+                            "format": "square640",
+                            "height": 640,
+                            "width": 640
+                        },
+                        {
+                            "url": "https://static01.nyt.com/images/2019/02/06/us/06dc-factcheck-sub2/06dc-factcheck-sub2-thumbLarge.jpg",
+                            "format": "Large Thumbnail",
+                            "height": 150,
+                            "width": 150
+                        },
+                        {
+                            "url": "https://static01.nyt.com/images/2019/02/06/us/06dc-factcheck-sub2/merlin_150246543_91aae21c-4fd6-46f0-b22b-ee333b7d9814-mediumThreeByTwo210.jpg",
+                            "format": "mediumThreeByTwo210",
+                            "height": 140,
+                            "width": 210
+                        },
+                        {
+                            "url": "https://static01.nyt.com/images/2019/02/06/us/06dc-factcheck-sub2/merlin_150246543_91aae21c-4fd6-46f0-b22b-ee333b7d9814-mediumThreeByTwo440.jpg",
+                            "format": "mediumThreeByTwo440",
+                            "height": 293,
+                            "width": 440
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

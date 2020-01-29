@@ -1,4 +1,5 @@
 package com.ebnrdwan.task.data.repositories.mock
+
 import com.google.gson.annotations.SerializedName
 
 
@@ -8,7 +9,7 @@ data class MockArticleResponse(
     @SerializedName("num_results")
     val numResults: Int = 1672, // 1672
     @SerializedName("mockResults")
-    val mockResults: List<MockResult> = listOf(),
+    val mockResults: List<MockResult> = listOf(MockResult()),
     @SerializedName("status")
     val status: String = "OK" // OK
 )
@@ -31,9 +32,9 @@ data class MockResult(
     @SerializedName("id")
     val id: Long = 100000006345543, // 100000006345543
     @SerializedName("media")
-    val media: List<Media> = listOf(),
+    val media: List<Media> = listOf(Media()),
     @SerializedName("org_facet")
-    val orgFacet: List<String> = listOf(),
+    val orgFacet: List<String> = listOf("orgfact","orgfact"),
     @SerializedName("per_facet")
     val perFacet: List<String> = listOf(),
     @SerializedName("published_date")

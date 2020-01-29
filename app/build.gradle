@@ -46,6 +46,9 @@ android {
     sourceSets {
         development { java.srcDirs = ["src/development/java"] }
         production { java.srcDirs = ["src/production/java"] }
+        test {
+            resources.srcDirs += ['src/test/resources']
+        }
     }
 
     compileOptions {
