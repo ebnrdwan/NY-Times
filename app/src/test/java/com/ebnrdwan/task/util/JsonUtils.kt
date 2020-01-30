@@ -4,7 +4,7 @@ import com.ebnrdwan.task.domain.ArticlesUseCaseTest
 import java.io.IOException
 import java.nio.charset.Charset
 
-fun loadJSONAStringFromAsset(fileName: String): String? {
+fun loadJsonFromResources(fileName: String): String? {
     var json: String? = null
     try {
         val stream =
