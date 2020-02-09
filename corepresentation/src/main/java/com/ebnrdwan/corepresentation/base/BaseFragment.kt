@@ -8,9 +8,7 @@ import androidx.fragment.app.Fragment
 
 abstract class BaseFragment : Fragment() {
 
-  open   fun observeOnUiState(){
-
-     }
+  open   fun observeOnUiState(){}
     abstract fun getLayout(): Int
     override fun onCreateView(
         inflater: LayoutInflater,

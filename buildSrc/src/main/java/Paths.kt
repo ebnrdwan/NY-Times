@@ -6,5 +6,5 @@ object Paths {
     const val kotlinGradlePluginClasspath =
         "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlinVersion}"
     const val navigationArgs =
-        "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation_UI}"
+        "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation}"
 }

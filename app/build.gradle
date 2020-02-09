@@ -14,7 +14,7 @@ android {
         versionCode Config.versionCode
         versionName Config.versionName
         testInstrumentationRunner InstrumentationTestLibraries.runnerClass
-
+        resConfigs Config.arabic, Config.english
 
     }
 
@@ -24,10 +24,14 @@ android {
             it.resValue "string", "API_KEY", API_KEY
         }
         release {
-            minifyEnabled false
+            shrinkResources = true
+            minifyEnabled true
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
         }
         debug {
+            shrinkResources = true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             applicationIdSuffix Dev.applicationIdSuffix
             // as long as no remote integration coupled with application id
         }
@@ -81,10 +85,10 @@ dependencies {
     androidTestImplementation InstrumentationTestLibraries.runners
     debugImplementation SharedTestLibraries.fragment_test
     debugImplementation SharedTestLibraries.testingX
+    debugImplementation CoreLibraries.leakCanary
     implementation CoreLibraries.material_design
     implementation CoreLibraries.lifecycle
     implementation CoreLibraries.fragmentKtx
-
     implementation NavigationLibraries.navigation_fragment
     implementation NavigationLibraries.navigation_fragmentKtx
     implementation NavigationLibraries.navigation_UI

@@ -49,6 +49,4 @@ class ArticlesUseCaseTest {
             .test()
             .assertValue(response)  //assert test
     }
-
-
 }

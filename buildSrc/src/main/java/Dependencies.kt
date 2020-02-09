@@ -11,7 +11,7 @@ object CoreLibraries {
     const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
     const val ktx = "androidx.core:core-ktx:${Versions.ktx}"
     const val fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.ktx}"
-
+    const val leakCanary = "com.squareup.leakcanary:leakcanary-android:${Versions.canary}"
 }
 
 
@@ -21,12 +21,12 @@ object CoreLibraries {
 object NavigationLibraries {
 
     const val navigation_fragment =
-        "androidx.navigation:navigation-fragment:${Versions.navigation_fragment}"
-    const val navigation_UI = "androidx.navigation:navigation-ui:${Versions.navigation_UI}"
+        "androidx.navigation:navigation-fragment:${Versions.navigation}"
+    const val navigation_UI = "androidx.navigation:navigation-ui:${Versions.navigation}"
     const val navigation_fragmentKtx =
-        "androidx.navigation:navigation-fragment-ktx:${Versions.navigation_fragmentKtx}"
+        "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
     const val navigation_UiKtx =
-        "androidx.navigation:navigation-ui-ktx:${Versions.navigation_UiKtx}"
+        "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
 }
 
 /*===========================UnitTest-Libraries==================================*/

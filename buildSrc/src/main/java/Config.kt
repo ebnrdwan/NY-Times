@@ -10,6 +10,9 @@ object Config {
     const val testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
     const val versionCode = 1
     const val versionName = "1.0.0"
+    const val arabic = "ar"
+    const val english = "en"
+    const val API_KEY = "bPutucn6FYOMbVED0PCCj6nLRj2V44Os"
 }
 
 /*
