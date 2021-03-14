@@ -98,28 +98,7 @@ in build.gradle (project level) there are two gradle tasks
 
 
 
-## Knowing issues
-- with code generated from dagger that target annotation processor of java 1.8 or lower
-you will face compilation error  @Generated annotation not found because of changing it's directory in java 1.9
 
-- **proposed solution**
-* [x] in gradle.properties set:
-  -org.gradle.java.home=C\:\\Program Files\\Java\\jdk-13.0.2
-
-* [x] in build.gradle (app) set:
-  - compileOptions {
-             sourceCompatibility JavaVersion.VERSION_1_9
-             targetCompatibility JavaVersion.VERSION_1_9
-                   }
-
-  - lintOptions {
-             abortOnError false
-                }
-
-
-  
-
-    
 
 ## LICENSE
 Copyright [2020] [Ebnrdwan]    

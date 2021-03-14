@@ -6,7 +6,7 @@ object Versions {
     const val minSdkVersion = 19
     const val targetSdkVersion = 28
     const val compileSdkVersion = 28
-    const val javaVersion = 1.9
+    const val javaVersion = 1.8
     const val kotlinJvmTarget = "1.8"
 
 
