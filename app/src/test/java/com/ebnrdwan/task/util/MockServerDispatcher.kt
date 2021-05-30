@@ -13,7 +13,6 @@ class MockServerDispatcher {
     //  response dispatcher
     class ResponseDispatcher : Dispatcher() {
 
-
         private val mockResponse = MockResponse().setResponseCode(SUCCESS)
 
         override fun dispatch(request: RecordedRequest): MockResponse {

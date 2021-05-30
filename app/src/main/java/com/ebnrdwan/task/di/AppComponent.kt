@@ -1,6 +1,7 @@
 package com.ebnrdwan.task.di
 
 import android.app.Application
+import com.ebnrdwan.task.di.currencies.CurrenciesSubcomponent
 import com.ebnrdwan.task.presentation.main.MainActivity
 import dagger.BindsInstance
 import dagger.Component
@@ -19,7 +20,7 @@ interface AppComponent {
      }
 
      fun inject(mainActivity: MainActivity)
-     fun registerArticleComponent(): ArticlesSubcomponent.Factory
+     fun registerCurrenciesComponent(): CurrenciesSubcomponent.Factory
 }
 
 

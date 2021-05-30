@@ -1,4 +1,4 @@
-package com.ebnrdwan.task.presentation.articles
+package com.ebnrdwan.task.presentation.currencies
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,19 +7,18 @@ import android.view.ViewGroup
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.ebnrdwan.task.R
-import com.ebnrdwan.task.data.dto.articles.ArticleItem
-import com.squareup.picasso.Picasso
+import com.ebnrdwan.task.data.dto.currencies.Currency
 import kotlinx.android.synthetic.main.article_list_item.view.*
 
 
-class ArticlesAdapterPaged
+class CurrenciesAdapterPaged
 constructor(
     val context: Context,
-    private var articles: List<ArticleItem>,
-    val onClickCallback: (ArticleItem) -> Unit
+    private var articles: List<Currency>,
+    val onClickCallback: (Currency) -> Unit
 ) :
-    PagedListAdapter<ArticleItem, ArticlesAdapterPaged.ViewHolder>(
-        ArticlesDiffUtil()
+    PagedListAdapter<Currency, CurrenciesAdapterPaged.ViewHolder>(
+        CurrencyListDiffUtil()
     ) {
 
 
@@ -38,7 +37,7 @@ constructor(
     }
 
 
-    fun updateArticles(articleItemArticles: List<ArticleItem>) {
+    fun updateArticles(articleItemArticles: List<Currency>) {
         articles = articleItemArticles
         notifyDataSetChanged()
     }
@@ -52,21 +51,9 @@ constructor(
     // stores and recycles views as they are scrolled off screen
     inner class ViewHolder internal constructor(private val rootView: View) :
         RecyclerView.ViewHolder(rootView) {
-        fun bind(article: ArticleItem) {
-            rootView.tv_title.text = article.title
-            rootView.tv_creation_date.text = article.publishedDate
-            rootView.tv_likes.text =
-                String.format(context.resources.getString(R.string.type), article.type)
-            rootView.tv_views.text =
-                String.format(context.resources.getString(R.string.views), article.views)
-            article.getFirstMedia()?.let {
-                Picasso.get().load(it).into(rootView.iv_post_cover)
-
-            }
-
-            rootView.setOnClickListener {
-                onClickCallback(article)
-            }
+        fun bind(currency: Currency) {
+            rootView.tv_title.text = currency.name
+            rootView.tvRate.text = currency.rate.toString()
         }
 
 

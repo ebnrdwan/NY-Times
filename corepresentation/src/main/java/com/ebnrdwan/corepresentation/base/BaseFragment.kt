@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 
 abstract class BaseFragment : Fragment() {
-
   open   fun observeOnUiState(){}
     abstract fun getLayout(): Int
     override fun onCreateView(

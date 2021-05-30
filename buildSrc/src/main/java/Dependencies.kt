@@ -83,7 +83,6 @@ object DomainLibraries {
     const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutine}"
     const val coroutinesAndroid =
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutine}"
-    const val daggerAndroid = "com.google.dagger:dagger-android:${Versions.dagger}"
     const val dagger = "com.google.dagger:dagger:${Versions.dagger}"
     const val daggerAnnotation = "com.google.dagger:dagger-compiler:${Versions.dagger}"
     const val daggerProcessor = "com.google.dagger:dagger-android-processor:${Versions.dagger}"

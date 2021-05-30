@@ -13,7 +13,7 @@ import kotlin.reflect.KClass
 /**
  * ViewModelFactory which uses Dagger to create the instances.
  */
-class ViewModelFactory @Inject constructor(
+open class ViewModelFactory @Inject constructor(
     private val creators: @JvmSuppressWildcards Map<Class<out ViewModel>, Provider<ViewModel>>
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {

@@ -11,6 +11,7 @@
 		android:allowBackup="false"
 		android:icon="@mipmap/ny_launcher"
 		android:label="@string/app_name"
+		android:usesCleartextTraffic="true"
 		android:roundIcon="@mipmap/ny_launcher_round"
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme"

@@ -1,16 +1,16 @@
 package com.ebnrdwan.task.ui.articles
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.ebnrdwan.task.data.dto.articles.ArticlesEntity
+import com.ebnrdwan.task.data.dto.currencies.CurrenciesResponse
 import com.ebnrdwan.core.data.error.Error
 import com.ebnrdwan.core.data.error.manager.ErrorManager
 import com.ebnrdwan.core.data.error.mapper.ErrorMapper
 import com.ebnrdwan.core.data.models.UiState
-import com.ebnrdwan.task.data.repositories.articles.IArticlesRepository
+import com.ebnrdwan.task.data.repositories.currencies.ICurrenciesRepository
 import com.ebnrdwan.task.data.repositories.mock.MockArticleRepository
 import com.ebnrdwan.task.data.repositories.mock.MockDataSource
-import com.ebnrdwan.task.domain.ArticlesUseCase
-import com.ebnrdwan.task.presentation.articles.ArticlesViewModel
+import com.ebnrdwan.task.domain.CurrenciesUseCase
+import com.ebnrdwan.task.presentation.currencies.CurrenciesViewModel
 import io.reactivex.android.plugins.RxAndroidPlugins
 import io.reactivex.schedulers.Schedulers
 import org.junit.Assert.assertEquals
@@ -20,11 +20,11 @@ import org.junit.Rule
 import org.junit.Test
 
 
-class ArticlesViewModelTest {
-    private lateinit var repository: IArticlesRepository
-    private lateinit var useCase: ArticlesUseCase
-    private lateinit var viewmodel: ArticlesViewModel
-    private lateinit var response: ArticlesEntity
+class CurrenciesViewModelTest {
+    private lateinit var repository: ICurrenciesRepository
+    private lateinit var useCase: CurrenciesUseCase
+    private lateinit var viewmodel: CurrenciesViewModel
+    private lateinit var response: CurrenciesResponse
     private lateinit var errorManager: ErrorManager
     @get:Rule
     var instantExecutorRule = InstantTaskExecutorRule()
@@ -33,11 +33,11 @@ class ArticlesViewModelTest {
     fun setUp() {
 
         repository = MockArticleRepository()
-        useCase = ArticlesUseCase(repository)
+        useCase = CurrenciesUseCase(repository)
         errorManager =
         ErrorManager(ErrorMapper())
         response = MockDataSource.getFakeArticlesResponse()
-        viewmodel = ArticlesViewModel(useCase)
+        viewmodel = CurrenciesViewModel(useCase)
         RxAndroidPlugins.setInitMainThreadSchedulerHandler { Schedulers.trampoline() }
 
     }
@@ -58,13 +58,13 @@ class ArticlesViewModelTest {
     @Test
     fun getSelectedArticle() {
 // test initial value of selected article is null
-        assertNull(viewmodel.getSelectedArticle().value)
+        assertNull(viewmodel.getSelectedCurrency().value)
     }
 
     @Test
     fun setSelectedArticle() {
         val item = MockDataSource.getFakeArticleItem()
-        viewmodel.getSelectedArticle().observeForever {
+        viewmodel.getSelectedCurrency().observeForever {
             assertEquals(
                 it, item
             )

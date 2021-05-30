@@ -1,7 +1,7 @@
 package com.ebnrdwan.task.domain
 
-import com.ebnrdwan.task.data.dto.articles.ArticlesEntity
-import com.ebnrdwan.task.data.repositories.articles.IArticlesRepository
+import com.ebnrdwan.task.data.dto.currencies.CurrenciesResponse
+import com.ebnrdwan.task.data.repositories.currencies.ICurrenciesRepository
 import com.ebnrdwan.task.data.repositories.mock.MockArticleRepository
 import com.ebnrdwan.task.data.repositories.mock.MockDataSource
 import com.ebnrdwan.task.util.Constants.articlesResponseFileName
@@ -14,23 +14,21 @@ import org.junit.Test
 
 
 class ArticlesUseCaseTest {
-    private lateinit var repository: IArticlesRepository
-    private lateinit var useCase: ArticlesUseCase
-    private lateinit var response: ArticlesEntity
+    private lateinit var repository: ICurrenciesRepository
+    private lateinit var useCase: CurrenciesUseCase
+    private lateinit var response: CurrenciesResponse
 
     @Before
     fun setUp() {
         repository = MockArticleRepository()
-        useCase = ArticlesUseCase(repository)
+        useCase = CurrenciesUseCase(repository)
     }
 
     @Test
     fun `when reading ArticlesApiResponse file_ it shouldn't be null`() {
         val stream =
             ArticlesUseCaseTest::class.java.getResourceAsStream(
-                baseJsonPath.plus(
-                    articlesResponseFileName
-                )
+                baseJsonPath.plus(articlesResponseFileName)
             )
         assertNotNull(stream)
     }
@@ -38,7 +36,7 @@ class ArticlesUseCaseTest {
     @Test
     fun `when mapping data from ArticlesApiResponse file into POJO object_ shouldn't be null `() {
         val data = loadJsonFromResources(articlesResponseFileName)
-        val obj = Gson().fromJson(data, ArticlesEntity::class.java)
+        val obj = Gson().fromJson(data, CurrenciesResponse::class.java)
         assertNotNull(obj)
     }
 

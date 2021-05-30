@@ -12,7 +12,7 @@ import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import androidx.test.rule.ActivityTestRule
 import com.ebnrdwan.task.R
-import com.ebnrdwan.task.presentation.articles.ArticlesFragment
+import com.ebnrdwan.task.presentation.currencies.CurrencyListFragment
 import com.ebnrdwan.task.presentation.main.MainActivity
 import org.hamcrest.Matchers
 import org.junit.Before
@@ -22,7 +22,7 @@ import org.junit.runner.RunWith
 import org.mockito.Mockito
 
 @RunWith(AndroidJUnit4ClassRunner::class)
-class ArticlesFragmentTest {
+class CurrencyListFragmentTest {
     @Rule
     lateinit var activity: ActivityTestRule<MainActivity>
     lateinit var navController: NavController
@@ -37,7 +37,7 @@ class ArticlesFragmentTest {
     }
 
     private fun launchFragment() {
-        val scenario = launchFragmentInContainer<ArticlesFragment>()
+        val scenario = launchFragmentInContainer<CurrencyListFragment>()
         scenario.onFragment {
             Navigation.setViewNavController(it.view!!, navController)
         }

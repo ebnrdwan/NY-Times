@@ -29,8 +29,6 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
         }
         debug {
-            shrinkResources = true
-            minifyEnabled true
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             applicationIdSuffix Dev.applicationIdSuffix
             // as long as no remote integration coupled with application id
@@ -42,9 +40,19 @@ android {
         production {
             dimension Dimensions.version
         }
+
+        staging {
+            dimension Dimensions.version
+        }
+
+        QC {
+            dimension Dimensions.version
+        }
+
         development {
             dimension Dimensions.version
         }
+
     }
 
     sourceSets {

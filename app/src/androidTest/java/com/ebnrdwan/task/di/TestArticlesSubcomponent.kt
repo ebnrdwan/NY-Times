@@ -1,11 +1,12 @@
 package com.ebnrdwan.task.di
 
 import com.ebnrdwan.core.di.FragmentScope
-import com.ebnrdwan.task.ui.articles.ArticlesFragmentTest
+import com.ebnrdwan.task.di.currencies.CurrenciesModule
+import com.ebnrdwan.task.ui.articles.CurrencyListFragmentTest
 import dagger.Subcomponent
 
 @FragmentScope
-@Subcomponent(modules = [ArticlesModule::class])
+@Subcomponent(modules = [CurrenciesModule::class])
 interface TestArticlesSubcomponent {
 
     @Subcomponent.Factory
@@ -13,5 +14,5 @@ interface TestArticlesSubcomponent {
         fun create(): TestArticlesSubcomponent
     }
 
-    fun inject(articlesFragment: ArticlesFragmentTest)
+    fun inject(articlesFragment: CurrencyListFragmentTest)
 }

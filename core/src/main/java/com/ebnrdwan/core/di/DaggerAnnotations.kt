@@ -12,7 +12,7 @@ annotation class FragmentScope
 @MustBeDocumented
 @Qualifier
 @Retention(AnnotationRetention.RUNTIME)
-annotation class MainArticlesSource
+annotation class CurrenciesSource
 
 
 @Qualifier

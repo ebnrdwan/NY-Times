@@ -1,4 +1,4 @@
-package com.ebnrdwan.task.presentation.articles
+package com.ebnrdwan.task.presentation.currencies
 
 import android.content.Context
 import android.os.Bundle
@@ -7,11 +7,9 @@ import android.view.MenuInflater
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.ebnrdwan.task.R
-import com.ebnrdwan.task.data.dto.articles.ArticleItem
 import com.ebnrdwan.core.data.models.UiState
 import com.ebnrdwan.task.presentation.ApplicationController
 import com.ebnrdwan.corepresentation.base.BaseFragment
@@ -21,37 +19,38 @@ import com.ebnrdwan.corepresentation.base.export_loading
 import com.ebnrdwan.corepresentation.utils.fade
 import com.ebnrdwan.corepresentation.utils.hide
 import com.ebnrdwan.corepresentation.utils.show
+import com.ebnrdwan.task.data.dto.currencies.Currency
 import kotlinx.android.synthetic.main.fragment_articles.*
 import java.util.Collections.emptyList
 import javax.inject.Inject
 
 
-class ArticlesFragment : BaseFragment() {
+class CurrencyListFragment : BaseFragment() {
     override fun getLayout(): Int = R.layout.fragment_articles
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
-    private val articlesViewModel by activityViewModels<ArticlesViewModel> { viewModelFactory }
+    private val articlesViewModel by activityViewModels<CurrenciesViewModel> { viewModelFactory }
     override fun onAttach(context: Context) {
         super.onAttach(context)
         activity?.let {
             (it.application as ApplicationController)
-                .appComponent.registerArticleComponent()
+                .appComponent.registerCurrenciesComponent()
                 .create()
                 .inject(this)
         }
     }
 
-    private var _mainAdapter: ArticlesAdapterPaged? = null
+    private var _mainAdapter: CurrenciesAdapterPaged? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
-        articlesViewModel.loadArticles()
+        articlesViewModel.loadCurrencies()
     }
 
 
     private val refreshListener = SwipeRefreshLayout.OnRefreshListener {
-        articlesViewModel.reloadArticles()
+        articlesViewModel.reloadCurrencies()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -75,7 +74,7 @@ class ArticlesFragment : BaseFragment() {
 
 
     private fun subscribeToViewModelObservables() {
-        articlesViewModel.getArticleList().observe(viewLifecycleOwner, Observer {
+        articlesViewModel.getCurrenciesList().observe(viewLifecycleOwner, Observer {
             _mainAdapter?.updateArticles(it)
         })
         observeOnUiState()
@@ -84,7 +83,7 @@ class ArticlesFragment : BaseFragment() {
 
     private fun initializeAdapter() {
         _mainAdapter = activity?.let { activity ->
-            ArticlesAdapterPaged(
+            CurrenciesAdapterPaged(
                 activity,
                 emptyList()
             ) { item ->
@@ -95,13 +94,13 @@ class ArticlesFragment : BaseFragment() {
         rvArticles.adapter = _mainAdapter
     }
 
-    private fun onArticleItemClick(article: ArticleItem) {
-        articlesViewModel.setSelectedArticle(article)
-        findNavController().navigate(
-            ArticlesFragmentDirections.actionNavHomeToNavDetails(
-                article.id.toInt()
-            )
-        )
+    private fun onArticleItemClick(article: Currency) {
+        articlesViewModel.setSelectedCurrency(article)
+//        findNavController().navigate(
+//            ArticlesFragmentDirections.actionNavHomeToNavDetails(
+//                article.id.toInt()
+//            )
+//        )
     }
 
 
