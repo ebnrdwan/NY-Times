@@ -7,6 +7,7 @@ import android.view.MenuInflater
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.ebnrdwan.core.data.models.UiState
@@ -20,8 +21,8 @@ import com.ebnrdwan.corepresentation.utils.show
 import com.ebnrdwan.task.R
 import com.ebnrdwan.task.data.dto.currencies.Currency
 import com.ebnrdwan.task.presentation.ApplicationController
-import com.ebnrdwan.task.util.IAppbarChangeOffsetWithSwipeToRefresh
-import com.ebnrdwan.task.util.hideToolbarItemsOnExpand
+import com.ebnrdwan.task.util.ui.IAppbarChangeOffsetWithSwipeToRefresh
+import com.ebnrdwan.task.util.ui.hideToolbarItemsOnExpand
 import kotlinx.android.synthetic.main.appbar_layout.*
 import kotlinx.android.synthetic.main.fragment_articles.*
 import kotlinx.android.synthetic.main.toolbar.*
@@ -102,11 +103,9 @@ class CurrencyListFragment : BaseFragment(), IAppbarChangeOffsetWithSwipeToRefre
 
     private fun onArticleItemClick(article: Currency) {
         articlesViewModel.setSelectedCurrency(article)
-//        findNavController().navigate(
-//            ArticlesFragmentDirections.actionNavHomeToNavDetails(
-//                article.id.toInt()
-//            )
-//        )
+        findNavController().navigate(
+            CurrencyListFragmentDirections.actionNavHomeToNavDetails()
+        )
     }
 
 

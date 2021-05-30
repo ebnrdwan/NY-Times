@@ -35,7 +35,6 @@ data class CurrenciesResponse(
     }
 }
 
-data class Currency(val name: String, val rate: Double)
 
 data class Rates(
     @SerializedName("AED")

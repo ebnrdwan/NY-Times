@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import com.ebnrdwan.core.data.error.manager.ErrorManager
 import com.ebnrdwan.core.data.models.UiState
 import com.ebnrdwan.core.util.Logger
+import com.ebnrdwan.core.util.SingleLiveEvent
 import com.ebnrdwan.corepresentation.base.BaseViewModel
 import com.ebnrdwan.corepresentation.utils.NoInternetException
 import com.ebnrdwan.task.data.dto.currencies.CurrenciesResponse
@@ -24,18 +25,20 @@ class CurrenciesViewModel @Inject constructor(private val articlesUseCase: ICurr
     private val _uiStatModel = MutableLiveData<UiState>().apply { }
     private val _currencyList = MutableLiveData<List<Currency>>()
     private val _selectedCurrency = MutableLiveData<Currency>()
-
+    private var currentBaseValue: Double = 1.0
+    private var currentSelectedCurrency: Currency? = null
+    private val currentConvertedAmount = SingleLiveEvent<Double>()
 
     @Inject
     lateinit var errorManager: ErrorManager
 
-    /*================get uiState as Immutable Live drawerList================*/
     fun getUiStateModel(): LiveData<UiState> = _uiStatModel
 
     fun getSelectedCurrency(): MutableLiveData<Currency> = _selectedCurrency
 
-    fun setSelectedCurrency(article: Currency) {
-        _selectedCurrency.value = article
+    fun setSelectedCurrency(currency: Currency) {
+        currentSelectedCurrency = currency
+        _selectedCurrency.value = currency
     }
 
 
@@ -91,6 +94,25 @@ class CurrenciesViewModel @Inject constructor(private val articlesUseCase: ICurr
         it.convertRatesToCurrencyList(it.rates)
         _currencyList.value = it.currenciesList
         _uiStatModel.value = UiState.SUCCESS
+    }
+
+    fun setNewBaseAmount(newValue: Double?) {
+        currentBaseValue = newValue ?: 1.0
+        emitNewConversionData()
+
+    }
+
+    fun getCurrentBaseValueLiveData(): Double? {
+        return if (currentBaseValue > 1) currentBaseValue else null
+    }
+
+    fun getCurrentConvertedValue(): SingleLiveEvent<Double> {
+        return currentConvertedAmount
+    }
+
+    private fun emitNewConversionData() {
+        val converted = currentBaseValue * (currentSelectedCurrency?.rate ?: 1.0)
+        currentConvertedAmount.postValue(converted)
     }
 
 }

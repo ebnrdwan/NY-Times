@@ -16,5 +16,7 @@
     <dimen name="medium_appbar_height">100dp</dimen>
     <dimen name="text_margin">16dp</dimen>
     <dimen name="largeTextSize">20sp</dimen>
+    <dimen name="vLarge_text_size">22sp</dimen>
+    <dimen name="divider_height">1dp</dimen>
 
 </resources>

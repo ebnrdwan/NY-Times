@@ -1,4 +1,4 @@
-package com.ebnrdwan.task.util
+package com.ebnrdwan.task.util.ui
 
 
 import android.animation.AnimatorSet

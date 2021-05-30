@@ -25,4 +25,8 @@
         <item name="actionMenuTextColor">@color/black</item>
     </style>
 
+    <style name="CurrencyStyle">
+        <item name="android:textSize">@dimen/vLarge_text_size</item>
+        <item name="android:gravity">center</item>
+    </style>
 </resources>

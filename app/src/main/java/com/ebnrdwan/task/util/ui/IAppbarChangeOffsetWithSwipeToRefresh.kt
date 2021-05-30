@@ -1,4 +1,4 @@
-package com.ebnrdwan.task.util
+package com.ebnrdwan.task.util.ui
 
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.android.material.appbar.AppBarLayout

@@ -8,7 +8,10 @@ import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.ebnrdwan.task.R
 import com.ebnrdwan.task.data.dto.currencies.Currency
+import com.ebnrdwan.task.util.Constants
 import kotlinx.android.synthetic.main.article_list_item.view.*
+import kotlinx.android.synthetic.main.fragment_conversion.*
+import setNumberTemplateWithSign
 
 
 class CurrenciesAdapterPaged
@@ -51,9 +54,12 @@ constructor(
     // stores and recycles views as they are scrolled off screen
     inner class ViewHolder internal constructor(private val rootView: View) :
         RecyclerView.ViewHolder(rootView) {
+        init {
+            rootView.setOnClickListener { onClickCallback.invoke(articles[adapterPosition]) }
+        }
         fun bind(currency: Currency) {
             rootView.tv_title.text = currency.name
-            rootView.tvRate.text = currency.rate.toString()
+            rootView.tvRate.setNumberTemplateWithSign(currency.rate, Constants.Ui.DEFAULT_DECIMALS)
         }
 
 

@@ -2,7 +2,7 @@ package com.ebnrdwan.task.di.currencies
 
 import com.ebnrdwan.core.di.FragmentScope
 import com.ebnrdwan.task.presentation.currencies.CurrencyListFragment
-import com.ebnrdwan.task.presentation.details.ArticleDetailsFragment
+import com.ebnrdwan.task.presentation.details.CurrencyConversionFragment
 import dagger.Subcomponent
 
 @FragmentScope
@@ -15,5 +15,5 @@ interface CurrenciesSubcomponent {
     }
 
     fun inject(currencyListFragment: CurrencyListFragment)
-    fun inject(DetailsFragment: ArticleDetailsFragment)
+    fun inject(detailsFragment: CurrencyConversionFragment)
 }

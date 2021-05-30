@@ -1,4 +1,4 @@
-package com.ebnrdwan.task.util
+package com.ebnrdwan.task.util.ui
 
 import android.view.View
 import android.widget.ImageView
@@ -29,7 +29,7 @@ fun AppBarLayout.hideToolbarItemsOnExpand(
 }
 
 
-fun animateHideOnExpand(
+ fun animateHideOnExpand(
     offsetAlpha: Float,
     view: View) {
 
@@ -40,7 +40,7 @@ fun animateHideOnExpand(
 }
 
 
-fun animateShowOnExpand(
+ fun animateShowOnExpand(
     offsetAlpha: Float,
     view: View
 ) {

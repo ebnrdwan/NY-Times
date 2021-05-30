@@ -18,21 +18,16 @@
 			app:popEnterAnim="@anim/slide_in_left"
 			app:popExitAnim="@anim/slide_out_right"
 			app:popUpTo="@+id/nav_news">
-			<argument
-				android:name="article_id"
-				app:argType="integer" />
+
 		</action>
 	</fragment>
 	
 	
 	<fragment
 		android:id="@+id/nav_details"
-		android:name="com.ebnrdwan.task.presentation.details.ArticleDetailsFragment"
+		android:name="com.ebnrdwan.task.presentation.details.CurrencyConversionFragment"
 		android:label="@string/menu_explore"
-		tools:layout="@layout/fragment_detail" >
-		<argument
-			android:name="article_id"
-			app:argType="integer" />
+		tools:layout="@layout/fragment_conversion" >
 	</fragment>
 
 
