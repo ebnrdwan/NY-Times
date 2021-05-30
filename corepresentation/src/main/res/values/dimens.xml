@@ -2,6 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 	
 	<dimen name="iv_50">50dp</dimen>
+	<dimen name="iv_60">60dp</dimen>
 	<dimen name="icon_40">40dp</dimen>
 	<dimen name="tx_size10">10sp</dimen>
 	<dimen name="tx_size25">25sp</dimen>
@@ -11,6 +12,7 @@
 	<dimen name="icon_20">20dp</dimen>
 	<dimen name="margin_8">8dp</dimen>
 	<dimen name="margin_16">16dp</dimen>
+	<dimen name="margin_20">25dp</dimen>
 	<dimen name="margin_4">4dp</dimen>
 	<dimen name="margin_2">2dp</dimen>
 	<dimen name="item_height_30">30dp</dimen>

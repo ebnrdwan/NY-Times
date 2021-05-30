@@ -21,5 +21,6 @@
 	<string name="views">%1$s Views</string>
 	<string name="search">Search</string>
 	<string name="article_id_notvalid">Article id not valid</string>
+    <string name="euro">EUR</string>
 
 </resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:elevation="@dimen/medium_elevation"
+    android:theme="@style/toolbarTheme"
+    app:contentInsetEnd="@dimen/margin_16"
+    app:contentInsetLeft="@dimen/margin_16"
+    app:contentInsetRight="@dimen/margin_16"
+    app:contentInsetStart="@dimen/margin_16"
+    app:layout_collapseMode="pin"
+    app:popupTheme="@style/AppTheme.PopupOverlay"
+    tools:title="@string/app_name">
+
+    <ImageView
+        android:id="@+id/toolbar_icon"
+        android:layout_width="@dimen/icon_40"
+        android:layout_height="@dimen/icon_40"
+        android:layout_gravity="start"
+        android:visibility="gone"
+        android:src="@drawable/ic_united_europe" />
+
+    <TextView
+        android:id="@+id/tv_toolbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:visibility="gone"
+        android:paddingStart="@dimen/margin_4"
+        android:layout_marginStart="@dimen/margin_4"
+        android:text="@string/euro"
+        android:textColor="@color/white" />
+</androidx.appcompat.widget.Toolbar>

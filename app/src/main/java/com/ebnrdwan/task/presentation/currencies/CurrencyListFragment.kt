@@ -9,9 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.ebnrdwan.task.R
 import com.ebnrdwan.core.data.models.UiState
-import com.ebnrdwan.task.presentation.ApplicationController
 import com.ebnrdwan.corepresentation.base.BaseFragment
 import com.ebnrdwan.corepresentation.base.exportErrorView
 import com.ebnrdwan.corepresentation.base.exportTvError
@@ -19,13 +17,19 @@ import com.ebnrdwan.corepresentation.base.export_loading
 import com.ebnrdwan.corepresentation.utils.fade
 import com.ebnrdwan.corepresentation.utils.hide
 import com.ebnrdwan.corepresentation.utils.show
+import com.ebnrdwan.task.R
 import com.ebnrdwan.task.data.dto.currencies.Currency
+import com.ebnrdwan.task.presentation.ApplicationController
+import com.ebnrdwan.task.util.IAppbarChangeOffsetWithSwipeToRefresh
+import com.ebnrdwan.task.util.hideToolbarItemsOnExpand
+import kotlinx.android.synthetic.main.appbar_layout.*
 import kotlinx.android.synthetic.main.fragment_articles.*
+import kotlinx.android.synthetic.main.toolbar.*
 import java.util.Collections.emptyList
 import javax.inject.Inject
 
 
-class CurrencyListFragment : BaseFragment() {
+class CurrencyListFragment : BaseFragment(), IAppbarChangeOffsetWithSwipeToRefresh {
     override fun getLayout(): Int = R.layout.fragment_articles
 
     @Inject
@@ -69,7 +73,9 @@ class CurrencyListFragment : BaseFragment() {
     }
 
     private fun setListeners() {
-        swipe_refresh.setOnRefreshListener(refreshListener)
+        swipe_refresh?.setOnRefreshListener(refreshListener)
+        appbar_layout_view?.let { setAppBarChangeListener(it, swipe_refresh) }
+        appbar_layout_view.hideToolbarItemsOnExpand(tv_toolbar_title, toolbar_icon)
     }
 
 
@@ -131,7 +137,7 @@ class CurrencyListFragment : BaseFragment() {
     }
 
     private fun isRefreshing(refreshing: Boolean) {
-        swipe_refresh.isRefreshing = refreshing
+        swipe_refresh?.isRefreshing = refreshing
     }
 
     private fun showLoading() {

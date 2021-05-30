@@ -18,7 +18,7 @@ object Versions {
     const val androidX = "1.1.0"
     const val lifecycle = "2.2.0"
     const val ktx = "1.2.0"
-    const val constraintLayout = "1.1.3"
+    const val constraintLayout = "2.0.0-beta1"
     const val androidKtx = "1.0.0-beta01"
 
     // Domain

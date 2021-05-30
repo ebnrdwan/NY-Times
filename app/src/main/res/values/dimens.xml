@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources >
-	
+<resources>
 
-	<dimen name="drawer_width">100dp</dimen>
-	<dimen name="nav_header_vertical_spacing">8dp</dimen>
-	<dimen name="nav_header_height">100dp</dimen>
-	<dimen name="cover_height">210dp</dimen>
-	<dimen name="drawer_item_text_size">12dp</dimen>
-	<dimen name="drawer_item_height">50dp</dimen>
-	
+
+    <dimen name="drawer_width">100dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">100dp</dimen>
+    <dimen name="cover_height">210dp</dimen>
+    <dimen name="drawer_item_text_size">12dp</dimen>
+    <dimen name="drawer_item_height">50dp</dimen>
+    <dimen name="medium_elevation">4dp</dimen>
+    <dimen name="large_elevation">8dp</dimen>
+    <dimen name="collapse_margin_start">20dp</dimen>
+    <dimen name="subtitle_margin_bottom">45dp</dimen>
+    <dimen name="title_margin_bottom">75dp</dimen>
+    <dimen name="medium_appbar_height">100dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="largeTextSize">20sp</dimen>
 
 </resources>
