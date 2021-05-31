@@ -46,7 +46,7 @@ class CurrencyListFragmentTest {
     @Test
     fun testScroll() {
 //        launchFragment()
-        Espresso.onView(ViewMatchers.withId(R.id.rvArticles))
+        Espresso.onView(ViewMatchers.withId(R.id.rvCurrencies))
             .perform(
                 RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(
                     0,
@@ -60,17 +60,13 @@ class CurrencyListFragmentTest {
                 ViewMatchers.isDisplayed()
             )
         )
-        Espresso.onView(ViewMatchers.withId(R.id.tv_description)).check(
-            ViewAssertions.matches(
-                ViewMatchers.isDisplayed()
-            )
-        )
+
     }
 
 
     @Test
     fun testRefresh() { //Before refresh there is a list .
-        Espresso.onView(ViewMatchers.withId(R.id.rvArticles)).check(
+        Espresso.onView(ViewMatchers.withId(R.id.rvCurrencies)).check(
             ViewAssertions.matches(
                 ViewMatchers.isDisplayed()
             )
@@ -85,7 +81,7 @@ class CurrencyListFragmentTest {
         // do refresh .
         Espresso.onView(ViewMatchers.withId(R.id.swipe_refresh)).perform(ViewActions.click())
         //after refresh there is a list.
-        Espresso.onView(ViewMatchers.withId(R.id.rvArticles)).check(
+        Espresso.onView(ViewMatchers.withId(R.id.rvCurrencies)).check(
             ViewAssertions.matches(
                 ViewMatchers.isDisplayed()
             )
@@ -101,7 +97,7 @@ class CurrencyListFragmentTest {
 
     @Test
     fun displayNewsData() {
-        Espresso.onView(ViewMatchers.withId(R.id.rvArticles)).check(
+        Espresso.onView(ViewMatchers.withId(R.id.rvCurrencies)).check(
             ViewAssertions.matches(
                 ViewMatchers.isDisplayed()
             )

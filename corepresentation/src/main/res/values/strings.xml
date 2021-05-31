@@ -1,5 +1,5 @@
 <resources>
-	<string name="app_name" translatable="false">New York Times</string>
+	<string name="app_name" translatable="false">Swenson HE Task</string>
 	<string name="no_internet">please check your internet connection</string>
 	<string name="no_data">No data yet </string>
 	<string name="error">Something went wrong</string>

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ebnrdwan.task.R
 import com.ebnrdwan.task.data.dto.currencies.Currency
 import com.ebnrdwan.task.util.Constants
-import kotlinx.android.synthetic.main.article_list_item.view.*
+import kotlinx.android.synthetic.main.currency_list_item.view.*
 import kotlinx.android.synthetic.main.fragment_conversion.*
 import setNumberTemplateWithSign
 
@@ -29,7 +29,7 @@ constructor(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val rootView: View =
             LayoutInflater.from(context)
-                .inflate(R.layout.article_list_item, parent, false)
+                .inflate(R.layout.currency_list_item, parent, false)
         return ViewHolder(rootView)
     }
 

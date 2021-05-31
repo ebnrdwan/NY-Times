@@ -11,4 +11,11 @@
 
 	<!--ids-->
 	<item type="id" name="temp_id" />
+
+	<declare-styleable name="AvatarImageBehavior">
+		<attr name="finalXPosition" format="dimension"/>
+		<attr name="finalYPosition" format="dimension"/>
+		<attr name="finalHeight" format="dimension"/>
+		<attr name="finalToolbarHeight" format="dimension"/>
+	</declare-styleable>
 </resources>

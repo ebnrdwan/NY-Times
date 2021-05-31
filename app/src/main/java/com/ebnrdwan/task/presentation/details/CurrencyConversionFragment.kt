@@ -4,7 +4,6 @@ import android.content.Context
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
-import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
@@ -39,10 +38,6 @@ class CurrencyConversionFragment : BaseFragment() {
         }
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -51,23 +46,26 @@ class CurrencyConversionFragment : BaseFragment() {
         bindOnViewModel()
     }
 
-    private fun bindOnViewModel() {
+    override fun bindOnViewModel() {
         getCurrentCurrency()
         getCurrentConvertedValue()
         getCurrentBaseValue()
     }
 
-    private fun initViews() {
+    override fun initViews() {
+        initBaseCurrencyEditText()
+    }
+
+    private fun initBaseCurrencyEditText() {
         edBaseCurrencyAmount.requestFocus()
         if (edBaseCurrencyAmount.hasFocus()) {
-            activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
             val imm: InputMethodManager? =
                 activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
             imm?.showSoftInput(edBaseCurrencyAmount, InputMethodManager.SHOW_FORCED)
         }
     }
 
-    private fun setListeners() {
+    override fun setListeners() {
         edBaseCurrencyAmount.onTextChangeDo {
             currenciesViewModel.setNewBaseAmount(it.toDoubleOrNull())
         }
@@ -95,10 +93,6 @@ class CurrencyConversionFragment : BaseFragment() {
     }
 
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.details, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }
 
     private fun bindDataToViews(currency: Currency) {
         tvConvertCurrency.text = currency.name

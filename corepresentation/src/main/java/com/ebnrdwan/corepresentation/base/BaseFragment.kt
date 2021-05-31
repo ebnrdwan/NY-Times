@@ -15,4 +15,19 @@ abstract class BaseFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? = inflater.inflate(getLayout(), container, false)
 
+
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        initViews()
+        setListeners()
+        bindOnViewModel()
+    }
+
+    abstract fun bindOnViewModel()
+
+    abstract fun setListeners()
+
+    abstract fun initViews()
+
 }

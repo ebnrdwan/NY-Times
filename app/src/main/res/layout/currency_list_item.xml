@@ -26,13 +26,13 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_post_cover"
-                android:layout_width="@dimen/iv_80"
-                android:layout_height="@dimen/iv_80"
+                android:layout_width="@dimen/iv_50"
+                android:layout_height="@dimen/iv_50"
                 android:layout_marginStart="@dimen/article_item_margin"
                 android:layout_marginTop="@dimen/margin_16"
                 android:layout_marginBottom="@dimen/margin_16"
                 android:scaleType="centerCrop"
-                android:src="@drawable/news_image_placeholder"
+                android:src="@drawable/ic_flag"
                 app:civ_border_color="@color/colorPrimary"
                 app:civ_border_width="@dimen/circle_img_border_width"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -59,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.70" />
+                app:layout_constraintGuide_percent="0.55" />
 
             <TextView
                 android:id="@+id/tvRate"

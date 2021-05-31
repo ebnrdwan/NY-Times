@@ -12,6 +12,7 @@ import com.ebnrdwan.task.data.dto.currencies.CurrenciesResponse
 import com.ebnrdwan.task.data.dto.currencies.Currency
 import com.ebnrdwan.task.domain.ICurrenciesUseCase
 import com.ebnrdwan.task.util.Constants
+import com.ebnrdwan.task.util.Constants.Ui.DEFAULT_RATE
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -20,14 +21,14 @@ import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 
-class CurrenciesViewModel @Inject constructor(private val articlesUseCase: ICurrenciesUseCase) :
+class CurrenciesViewModel @Inject constructor(private val currenciesUseCase: ICurrenciesUseCase) :
     BaseViewModel() {
     private val _uiStatModel = MutableLiveData<UiState>().apply { }
     private val _currencyList = MutableLiveData<List<Currency>>()
     private val _selectedCurrency = MutableLiveData<Currency>()
-    private var currentBaseValue: Double = 1.0
-    private var currentSelectedCurrency: Currency? = null
-    private val currentConvertedAmount = SingleLiveEvent<Double>()
+    private var _currentBaseValue: Double = DEFAULT_RATE
+    private var _currentSelectedCurrency: Currency? = null
+    private val _currentConvertedAmount = SingleLiveEvent<Double>()
 
     @Inject
     lateinit var errorManager: ErrorManager
@@ -37,7 +38,7 @@ class CurrenciesViewModel @Inject constructor(private val articlesUseCase: ICurr
     fun getSelectedCurrency(): MutableLiveData<Currency> = _selectedCurrency
 
     fun setSelectedCurrency(currency: Currency) {
-        currentSelectedCurrency = currency
+        _currentSelectedCurrency = currency
         _selectedCurrency.value = currency
     }
 
@@ -52,7 +53,7 @@ class CurrenciesViewModel @Inject constructor(private val articlesUseCase: ICurr
     /*================fetch Currencies remotely================*/
     private fun fetchCurrencies(uiState: UiState) {
         addDisposable(
-            articlesUseCase.invoke()
+            currenciesUseCase.invoke()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe {
@@ -97,22 +98,22 @@ class CurrenciesViewModel @Inject constructor(private val articlesUseCase: ICurr
     }
 
     fun setNewBaseAmount(newValue: Double?) {
-        currentBaseValue = newValue ?: 1.0
+        _currentBaseValue = newValue ?: DEFAULT_RATE
         emitNewConversionData()
 
     }
 
     fun getCurrentBaseValueLiveData(): Double? {
-        return if (currentBaseValue > 1) currentBaseValue else null
+        return if (_currentBaseValue > 1) _currentBaseValue else null
     }
 
     fun getCurrentConvertedValue(): SingleLiveEvent<Double> {
-        return currentConvertedAmount
+        return _currentConvertedAmount
     }
 
     private fun emitNewConversionData() {
-        val converted = currentBaseValue * (currentSelectedCurrency?.rate ?: 1.0)
-        currentConvertedAmount.postValue(converted)
+        val converted = _currentBaseValue * (_currentSelectedCurrency?.rate ?: DEFAULT_RATE)
+        _currentConvertedAmount.postValue(converted)
     }
 
 }

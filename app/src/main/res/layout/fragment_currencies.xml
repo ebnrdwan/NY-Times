@@ -23,7 +23,7 @@
                 android:layout_height="match_parent">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvArticles"
+                    android:id="@+id/rvCurrencies"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:clipToPadding="false"
@@ -33,7 +33,7 @@
                     app:layout_constraintHorizontal_chainStyle="packed"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:listitem="@layout/article_list_item" />
+                    tools:listitem="@layout/currency_list_item" />
 
                 <include
                     android:id="@+id/loading_layout"

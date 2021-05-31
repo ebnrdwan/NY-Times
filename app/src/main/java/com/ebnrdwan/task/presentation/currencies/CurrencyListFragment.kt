@@ -1,9 +1,6 @@
 package com.ebnrdwan.task.presentation.currencies
 
 import android.content.Context
-import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -24,18 +21,18 @@ import com.ebnrdwan.task.presentation.ApplicationController
 import com.ebnrdwan.task.util.ui.IAppbarChangeOffsetWithSwipeToRefresh
 import com.ebnrdwan.task.util.ui.hideToolbarItemsOnExpand
 import kotlinx.android.synthetic.main.appbar_layout.*
-import kotlinx.android.synthetic.main.fragment_articles.*
+import kotlinx.android.synthetic.main.fragment_currencies.*
 import kotlinx.android.synthetic.main.toolbar.*
 import java.util.Collections.emptyList
 import javax.inject.Inject
 
 
 class CurrencyListFragment : BaseFragment(), IAppbarChangeOffsetWithSwipeToRefresh {
-    override fun getLayout(): Int = R.layout.fragment_articles
+    override fun getLayout(): Int = R.layout.fragment_currencies
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
-    private val articlesViewModel by activityViewModels<CurrenciesViewModel> { viewModelFactory }
+    private val currenciesViewModel by activityViewModels<CurrenciesViewModel> { viewModelFactory }
     override fun onAttach(context: Context) {
         super.onAttach(context)
         activity?.let {
@@ -46,50 +43,40 @@ class CurrencyListFragment : BaseFragment(), IAppbarChangeOffsetWithSwipeToRefre
         }
     }
 
-    private var _mainAdapter: CurrenciesAdapterPaged? = null
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-        articlesViewModel.loadCurrencies()
-    }
+    private var currenciesAdapterPaged: CurrenciesAdapterPaged? = null
 
 
     private val refreshListener = SwipeRefreshLayout.OnRefreshListener {
-        articlesViewModel.reloadCurrencies()
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.articles, menu)
-        super.onCreateOptionsMenu(menu, inflater)
+        currenciesViewModel.reloadCurrencies()
     }
 
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
-        setListeners()
-        subscribeToViewModelObservables()
-        initializeAdapter()
-
+    override fun bindOnViewModel() {
+        currenciesViewModel.loadCurrencies()
+        observeOnCurrencyList()
+        observeOnUiState()
     }
 
-    private fun setListeners() {
+    override fun setListeners() {
         swipe_refresh?.setOnRefreshListener(refreshListener)
         appbar_layout_view?.let { setAppBarChangeListener(it, swipe_refresh) }
-        appbar_layout_view.hideToolbarItemsOnExpand(tv_toolbar_title, toolbar_icon)
+        appbar_layout_view.hideToolbarItemsOnExpand(tv_toolbar_title, toolbar_icon,tvBaseCurrency,imgBaseCurrency)
+    }
+
+    override fun initViews() {
+        initializeAdapter()
     }
 
 
-    private fun subscribeToViewModelObservables() {
-        articlesViewModel.getCurrenciesList().observe(viewLifecycleOwner, Observer {
-            _mainAdapter?.updateArticles(it)
+    private fun observeOnCurrencyList() {
+        currenciesViewModel.getCurrenciesList().observe(viewLifecycleOwner, Observer {
+            currenciesAdapterPaged?.updateArticles(it)
         })
-        observeOnUiState()
     }
 
 
     private fun initializeAdapter() {
-        _mainAdapter = activity?.let { activity ->
+        currenciesAdapterPaged = activity?.let { activity ->
             CurrenciesAdapterPaged(
                 activity,
                 emptyList()
@@ -97,12 +84,12 @@ class CurrencyListFragment : BaseFragment(), IAppbarChangeOffsetWithSwipeToRefre
                 onArticleItemClick(item)
             }
         }
-        rvArticles.layoutManager = LinearLayoutManager(context)
-        rvArticles.adapter = _mainAdapter
+        rvCurrencies.layoutManager = LinearLayoutManager(context)
+        rvCurrencies.adapter = currenciesAdapterPaged
     }
 
     private fun onArticleItemClick(article: Currency) {
-        articlesViewModel.setSelectedCurrency(article)
+        currenciesViewModel.setSelectedCurrency(article)
         findNavController().navigate(
             CurrencyListFragmentDirections.actionNavHomeToNavDetails()
         )
@@ -110,7 +97,7 @@ class CurrencyListFragment : BaseFragment(), IAppbarChangeOffsetWithSwipeToRefre
 
 
     override fun observeOnUiState() {
-        articlesViewModel.getUiStateModel().observe(viewLifecycleOwner, Observer {
+        currenciesViewModel.getUiStateModel().observe(viewLifecycleOwner, Observer {
 
             when (it) {
                 is UiState.LOADING -> {
@@ -142,7 +129,7 @@ class CurrencyListFragment : BaseFragment(), IAppbarChangeOffsetWithSwipeToRefre
     private fun showLoading() {
         isRefreshing(false)
         export_loading.show()
-        rvArticles.hide()
+        rvCurrencies.hide()
         exportErrorView.hide()
 
     }
@@ -150,7 +137,7 @@ class CurrencyListFragment : BaseFragment(), IAppbarChangeOffsetWithSwipeToRefre
     private fun showReloading() {
         isRefreshing(true)
         export_loading.hide()
-        rvArticles.hide()
+        rvCurrencies.hide()
         exportErrorView.hide()
 
     }
@@ -158,7 +145,7 @@ class CurrencyListFragment : BaseFragment(), IAppbarChangeOffsetWithSwipeToRefre
     private fun showData() {
         isRefreshing(false)
         export_loading.hide()
-        rvArticles.fade()
+        rvCurrencies.fade()
         exportErrorView.hide()
 
 
@@ -168,7 +155,7 @@ class CurrencyListFragment : BaseFragment(), IAppbarChangeOffsetWithSwipeToRefre
         isRefreshing(false)
         exportTvError.text = getString(message)
         export_loading.hide()
-        rvArticles.hide()
+        rvCurrencies.hide()
         exportErrorView.fade()
     }
 
