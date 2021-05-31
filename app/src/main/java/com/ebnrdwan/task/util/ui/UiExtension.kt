@@ -8,9 +8,10 @@ import setVisibilityState
 import kotlin.math.abs
 
 fun AppBarLayout.hideToolbarItemsOnExpand(
-
     toolbarTitle: TextView,
-    toolbarIcon: ImageView
+    toolbarIcon: ImageView,
+     appbarTitle: TextView,
+     appbarIcon: ImageView
 ) {
 
     this.addOnOffsetChangedListener(object : AppBarStateChangeListener() {
@@ -24,6 +25,8 @@ fun AppBarLayout.hideToolbarItemsOnExpand(
         override fun offsetAlphaOnScrolling(offsetAlpha: Float) {
             animateHideOnExpand(offsetAlpha, toolbarTitle)
             animateHideOnExpand(offsetAlpha, toolbarIcon)
+            animateShowOnExpand(offsetAlpha, appbarTitle)
+            animateShowOnExpand(offsetAlpha, appbarIcon)
         }
     })
 }
