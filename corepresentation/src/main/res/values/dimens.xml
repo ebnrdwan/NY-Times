@@ -26,9 +26,9 @@
 	<dimen name="design_navigation_icon_size" tools:override="true">60dp</dimen>
 	<dimen name="zero">0dp</dimen>
 	<dimen name="circle_img_border_width">1dp</dimen>
-	<dimen name="article_card_margin_end">16dp</dimen>
+	<dimen name="currency_card_margin_end">16dp</dimen>
 	<dimen name="divider_height">1dp</dimen>
 	<dimen name="divider_width">1dp</dimen>
-	<dimen name="article_item_margin">8dp</dimen>
+	<dimen name="currency_item_margin">8dp</dimen>
 
 </resources>

@@ -8,7 +8,6 @@
 	<fragment
 		android:id="@+id/nav_news"
 		android:name="com.ebnrdwan.task.presentation.currencies.CurrencyListFragment"
-		android:label="@string/ny_times"
 		tools:layout="@layout/fragment_currencies">
 		<action
 			android:id="@+id/action_nav_home_to_nav_details"
@@ -26,7 +25,6 @@
 	<fragment
 		android:id="@+id/nav_details"
 		android:name="com.ebnrdwan.task.presentation.details.CurrencyConversionFragment"
-		android:label="@string/menu_explore"
 		tools:layout="@layout/fragment_conversion" >
 	</fragment>
 

@@ -1,4 +1,4 @@
-package com.ebnrdwan.task.ui.articles
+package com.ebnrdwan.task.ui.currencies
 
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.navigation.NavController

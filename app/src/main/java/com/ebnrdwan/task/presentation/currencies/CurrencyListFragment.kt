@@ -70,7 +70,7 @@ class CurrencyListFragment : BaseFragment(), IAppbarChangeOffsetWithSwipeToRefre
 
     private fun observeOnCurrencyList() {
         currenciesViewModel.getCurrenciesList().observe(viewLifecycleOwner, Observer {
-            currenciesAdapterPaged?.updateArticles(it)
+            currenciesAdapterPaged?.updateCurrencies(it)
         })
     }
 
@@ -81,15 +81,15 @@ class CurrencyListFragment : BaseFragment(), IAppbarChangeOffsetWithSwipeToRefre
                 activity,
                 emptyList()
             ) { item ->
-                onArticleItemClick(item)
+                onCurrencyClicked(item)
             }
         }
         rvCurrencies.layoutManager = LinearLayoutManager(context)
         rvCurrencies.adapter = currenciesAdapterPaged
     }
 
-    private fun onArticleItemClick(article: Currency) {
-        currenciesViewModel.setSelectedCurrency(article)
+    private fun onCurrencyClicked(currency: Currency) {
+        currenciesViewModel.setSelectedCurrency(currency)
         findNavController().navigate(
             CurrencyListFragmentDirections.actionNavHomeToNavDetails()
         )

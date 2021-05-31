@@ -5,9 +5,9 @@ import com.ebnrdwan.task.data.dto.currencies.Currency
 
 class CurrencyListDiffUtil : DiffUtil.ItemCallback<Currency>() {
 
-    override fun areItemsTheSame(oldItem: Currency, articleItemItem: Currency): Boolean =
-        oldItem.name == articleItemItem.name
+    override fun areItemsTheSame(oldItem: Currency, currency: Currency): Boolean =
+        oldItem.name == currency.name
 
-    override fun areContentsTheSame(oldItem: Currency, articleItemItem: Currency): Boolean =
-        oldItem == articleItemItem
+    override fun areContentsTheSame(oldItem: Currency, currency: Currency): Boolean =
+        oldItem == currency
 }

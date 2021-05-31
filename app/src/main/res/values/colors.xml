@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<color name="nav_bg_color">#F7F7F7</color>
-	<color name="post_card_bg_transparent">#CDFFFFFF</color>
-    <color name="article_list_bg">#00FFFFFF</color>
-	<color name="divider_color">#dbdde1</color>
+    <color name="post_card_bg_transparent">#CDFFFFFF</color>
+    <color name="divider_color">#dbdde1</color>
 
 </resources>

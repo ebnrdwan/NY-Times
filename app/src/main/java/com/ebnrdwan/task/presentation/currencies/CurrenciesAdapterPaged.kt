@@ -10,14 +10,13 @@ import com.ebnrdwan.task.R
 import com.ebnrdwan.task.data.dto.currencies.Currency
 import com.ebnrdwan.task.util.Constants
 import kotlinx.android.synthetic.main.currency_list_item.view.*
-import kotlinx.android.synthetic.main.fragment_conversion.*
 import setNumberTemplateWithSign
 
 
 class CurrenciesAdapterPaged
 constructor(
     val context: Context,
-    private var articles: List<Currency>,
+    private var list: List<Currency>,
     val onClickCallback: (Currency) -> Unit
 ) :
     PagedListAdapter<Currency, CurrenciesAdapterPaged.ViewHolder>(
@@ -35,19 +34,19 @@ constructor(
 
     // binds the drawerList to the TextView in each row
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val article = articles[position]
-        article.let { holder.bind(article) }
+        val currency = list[position]
+        currency.let { holder.bind(currency) }
     }
 
 
-    fun updateArticles(articleItemArticles: List<Currency>) {
-        articles = articleItemArticles
+    fun updateCurrencies(listCurrencies: List<Currency>) {
+        list = listCurrencies
         notifyDataSetChanged()
     }
 
     // total number of rows
     override fun getItemCount(): Int {
-        return articles.size
+        return list.size
     }
 
 
@@ -55,7 +54,7 @@ constructor(
     inner class ViewHolder internal constructor(private val rootView: View) :
         RecyclerView.ViewHolder(rootView) {
         init {
-            rootView.setOnClickListener { onClickCallback.invoke(articles[adapterPosition]) }
+            rootView.setOnClickListener { onClickCallback.invoke(list[adapterPosition]) }
         }
         fun bind(currency: Currency) {
             rootView.tv_title.text = currency.name

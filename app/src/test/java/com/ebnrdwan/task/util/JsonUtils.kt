@@ -1,6 +1,6 @@
 package com.ebnrdwan.task.util
 
-import com.ebnrdwan.task.domain.ArticlesUseCaseTest
+import com.ebnrdwan.task.domain.CurrenciesUseCaseTest
 import java.io.IOException
 import java.nio.charset.Charset
 
@@ -8,7 +8,7 @@ fun loadJsonFromResources(fileName: String): String? {
     var json: String? = null
     try {
         val stream =
-            ArticlesUseCaseTest::class.java.getResourceAsStream("/api_responses/$fileName")
+            CurrenciesUseCaseTest::class.java.getResourceAsStream("/api_responses/$fileName")
 
         val size = stream.available()
 

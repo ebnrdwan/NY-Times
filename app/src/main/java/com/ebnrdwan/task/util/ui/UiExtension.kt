@@ -50,7 +50,6 @@ fun AppBarLayout.hideToolbarItemsOnExpand(
 
     view?.alpha = offsetAlpha
     view?.setVisibilityState(offsetAlpha > 0)
-
 }
 
 

@@ -1,26 +1,5 @@
 <resources>
-	<string name="navigation_drawer_open">Open navigation drawer</string>
-	<string name="navigation_drawer_close">Close navigation drawer</string>
-	<string name="nav_header_desc" translatable="false">Navigation header</string>
-	<string name="action_settings">Settings</string>
-	<string name="menu_explore">Details</string>
-	<string name="welcome">Welcome</string>
-	<string name="ny_times">NY Times</string>
-	<string name="menu_news">New</string>
-	<string name="menu_map">News on Map</string>
-	<string name="menu_events">Events</string>
-	<string name="menu_leadership">News Topics</string>
-	<string name="menu_language" />
-	<string name="open">Open</string>
-	<string name="close">Close</string>
 	<string name="tools_text_title">Title</string>
-	<string name="tools_tv_likes">Likes(75)</string>
-	<string name="tools_tv_views">8 Views</string>
-	<string name="tools_tv_date">14 oct,2019</string>
-	<string name="type">(%1$s) </string>
-	<string name="views">%1$s Views</string>
-	<string name="search">Search</string>
-	<string name="article_id_notvalid">Article id not valid</string>
     <string name="euro">EUR</string>
 
 </resources>
